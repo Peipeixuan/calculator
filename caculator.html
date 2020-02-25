@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<style>
+
+    body {
+        background-color: #031A23;
+    }
+
+    input:hover {
+        box-shadow: 2px 10px 16px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    input:active {
+        box-shadow: inset 2px 10px 14px 1px rgba(0, 0, 0, 0.26);
+    }
+
+    input {
+        background-size: contain;
+        width: 60px;
+        height: 60px;
+    }
+
+    #del {
+        background-image: url("delete.png");
+    }
+
+    #c {
+        background-image: url("can.png");
+    }
+
+    #dot {
+        background-image: url("dot.png");
+    }
+
+    #leftBracket {
+        background-image: url("(.png");
+    }
+
+    #i7 {
+        background-image: url("7.png");
+    }
+
+    #i4 {
+        background-image: url("4.png");
+    }
+
+    #i1 {
+        background-image: url("1.png");
+    }
+
+    #rightBracket {
+        background-image: url(").png");
+    }
+
+    #i8 {
+        background-image: url("8.png");
+    }
+
+    #i5 {
+        background-image: url("5.png");
+    }
+
+    #i2 {
+        background-image: url("2.png");
+    }
+
+    #i0 {
+        background-image: url("0.png");
+    }
+
+    #i9 {
+        background-image: url("9.png");
+    }
+
+    #i6 {
+        background-image: url("6.png");
+    }
+
+    #i3 {
+        background-image: url("3.png");
+    }
+
+    #i00 {
+        background-image: url("00.png");
+    }
+
+    #plus {
+        background-image: url("+.png");
+    }
+
+    #minus {
+        background-image: url("-.png");
+    }
+
+    #mul {
+        background-image: url("mul.png");
+    }
+
+    #div {
+        background-image: url("div.png");
+    }
+
+    #equ {
+        background-image: url("equ.png");
+        background-size: cover;
+        width: 321px;
+        height: 60px;
+
+    }
+
+    #calculate {
+        border-style: outset;
+        border-color: #F5F5F5;
+        border-width: 2px;
+        overflow: auto;
+        overflow-y: hidden;
+        margin-left: auto;
+        margin-right: auto;
+        height: 54px;
+        width: 321px;
+        background-color: rgba(245, 245, 245, 0.5);
+        font-size: 38px;
+        font-family: 微軟正黑體, serif;
+        /*position: relative;
+        left: 7px;
+        top: 0;*/
+    }
+
+    #resultArea {
+        border-style: outset;
+        border-color: #F5F5F5;
+        border-width: 4px;
+        overflow: auto;
+        overflow-y: hidden;
+        margin-left: auto;
+        margin-right: auto;
+        height: 60px;
+        width: 318px;
+        background-color: #F5F5F5;
+        font-size: 50px;
+        font-family: 微軟正黑體, serif;
+
+        /*position: relative;
+        left: 7px;
+        top: 0px;*/
+
+    }
+
+    #calculator {
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #cal {
+        text-align: center;
+        vertical-align:bottom;
+        font-size: 56px;
+        font-family: 微軟正黑體, serif;
+        color: #F5F5F5;
+
+
+
+    }
+
+    @media (min-width: 900px) and (min-height: 500px){
+        #cal {
+            text-align: center;
+            vertical-align:bottom;
+            font-size: 118px;
+            font-family: 微軟正黑體, serif;
+            color: #F5F5F5;
+        }
+    }
+
+
+</style>
+
+<body>
+<div id="calculate"></div>
+
+<div id="resultArea" value='0'></div>
+<table id="calculator">
+
+    <tr>
+        <td>
+            <input type="button" id="del">
+        </td>
+        <td>
+            <input type="button" id="i7">
+        </td>
+        <td>
+            <input type="button" id="i8">
+        </td>
+        <td>
+            <input type="button" id="i9">
+        </td>
+        <td>
+            <input type="button" id="plus">
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            <input type="button" id="c">
+        </td>
+        <td>
+            <input type="button" id="i4">
+        </td>
+        <td>
+            <input type="button" id="i5">
+        </td>
+        <td>
+            <input type="button" id="i6">
+        </td>
+        <td>
+            <input type="button" id="minus">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" id="dot">
+        </td>
+        <td>
+            <input type="button" id="i1">
+        </td>
+        <td>
+            <input type="button" id="i2">
+        </td>
+        <td>
+            <input type="button" id="i3">
+        </td>
+        <td>
+            <input type="button" id="mul">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" id="leftBracket">
+        </td>
+        <td>
+            <input type="button" id="rightBracket">
+        </td>
+        <td>
+            <input type="button" id="i0">
+        </td>
+        <td>
+            <input type="button" id="i00">
+        </td>
+        <td>
+            <input type="button" id="div">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5">
+            <input type="button" id="equ">
+        </td>
+    </tr>
+</table>
+<p id="cal">CALCULATOR</p>
+
+</body>
+<script>
+    window.onload = function () {
+        var result = document.getElementById("resultArea").innerHTML;
+
+        document.getElementById("i1").onclick = function add1() {
+
+            document.getElementById("resultArea").innerHTML += '1';
+        };
+        document.getElementById("i2").onclick = function add2() {
+
+            document.getElementById("resultArea").innerHTML += '2';
+        };
+        document.getElementById("i3").onclick = function add3() {
+
+            document.getElementById("resultArea").innerHTML += '3';
+        };
+        document.getElementById("i4").onclick = function add4() {
+
+            document.getElementById("resultArea").innerHTML += '4';
+        };
+        document.getElementById("i5").onclick = function add5() {
+
+            document.getElementById("resultArea").innerHTML += '5';
+        };
+        document.getElementById("i6").onclick = function add6() {
+
+            document.getElementById("resultArea").innerHTML += '6';
+        };
+        document.getElementById("i7").onclick = function add7() {
+
+            document.getElementById("resultArea").innerHTML += '7';
+        };
+        document.getElementById("i8").onclick = function add8() {
+
+            document.getElementById("resultArea").innerHTML += '8';
+        };
+        document.getElementById("i9").onclick = function add9() {
+
+            document.getElementById("resultArea").innerHTML += '9';
+        };
+        document.getElementById("i0").onclick = function add0() {
+            if (document.getElementById("resultArea").innerHTML != '0') {
+
+                document.getElementById("resultArea").innerHTML += '0';
+            }
+        };
+        document.getElementById("plus").onclick = function plus() {
+            if (document.getElementById("resultArea").innerHTML != '') {
+                document.getElementById("resultArea").innerHTML += '+';
+            }
+
+            document.getElementById("calculate").innerHTML += document.getElementById("resultArea").innerHTML;
+            document.getElementById("resultArea").innerHTML = '';
+        };
+        document.getElementById("minus").onclick = function minus() {
+
+            if (document.getElementById("resultArea").innerHTML != '') {
+
+                document.getElementById("resultArea").innerHTML += '-';
+            }
+            document.getElementById("calculate").innerHTML += document.getElementById("resultArea").innerHTML;
+            document.getElementById("resultArea").innerHTML = '';
+        };
+        document.getElementById("mul").onclick = function mul() {
+            if (document.getElementById("resultArea").innerHTML != '') {
+
+                document.getElementById("resultArea").innerHTML += '*';
+            }
+            document.getElementById("calculate").innerHTML += document.getElementById("resultArea").innerHTML;
+            document.getElementById("resultArea").innerHTML = '';
+        };
+        document.getElementById("div").onclick = function div() {
+            if (document.getElementById("resultArea").innerHTML != '') {
+
+                document.getElementById("resultArea").innerHTML += '/';
+            }
+            document.getElementById("calculate").innerHTML += document.getElementById("resultArea").innerHTML;
+            document.getElementById("resultArea").innerHTML = '';
+        };
+        document.getElementById("dot").onclick = function dot() {
+            if (document.getElementById("resultArea").innerHTML.indexOf(".") == -1
+                && document.getElementById("resultArea").innerHTML != '') {
+
+                document.getElementById("resultArea").innerHTML += '.';
+            }
+
+        };
+        document.getElementById("leftBracket").onclick = function rbracket() {
+
+            document.getElementById("resultArea").innerHTML += '(';
+        };
+        document.getElementById("rightBracket").onclick = function lbracket() {
+            if (document.getElementById("resultArea").innerHTML != '') {
+                document.getElementById("resultArea").innerHTML += ')';
+            }
+
+        };
+        document.getElementById("i00").onclick = function add00() {
+            if (document.getElementById("resultArea").innerText != 0) {
+
+                document.getElementById("resultArea").innerHTML += '00';
+            } else {
+                //do nothing
+
+            }
+
+        };
+        document.getElementById("del").onclick = function del() {
+            var stringLength = document.getElementById("resultArea").innerText.length;
+            var remain = document.getElementById("resultArea").innerText.substring(0, stringLength - 1);
+            document.getElementById("resultArea").innerText = remain;
+        };
+        document.getElementById("c").onclick = function c() {
+            document.getElementById("resultArea").innerText = '';
+            document.getElementById("calculate").innerHTML = '';
+        };
+
+        document.getElementById("equ").onclick = function equ() {
+
+            try {
+                //document.getElementById("calculate").innerHTML += document.getElementById("resultArea").innerHTML;
+                var totalFormula = document.getElementById("calculate").innerHTML + document.getElementById("resultArea").innerHTML;
+                document.getElementById("calculate").innerHTML = totalFormula;
+                document.getElementById("resultArea").innerHTML = eval(totalFormula);
+
+            } catch (e) {
+                alert("Error:(");
+            }
+
+        };
+
+
+    };
+</script>
+</html>
